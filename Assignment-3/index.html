@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3 | Atlas Models Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="deal-strip">Free deployment guides on all model bundles this week</div>
+
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-badge">A</span>
+        <span>Atlas Models</span>
+      </a>
+
+      <form class="searchbar" action="#">
+        <select aria-label="Search category">
+          <option>All Models</option>
+          <option>Local Models</option>
+          <option>Hosted APIs</option>
+          <option>Vision</option>
+          <option>Embeddings</option>
+        </select>
+        <input
+          type="search"
+          placeholder="Search Qwen, coding models, local AI, image APIs..."
+          aria-label="Search models"
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="top-actions">
+        <a href="#pricing">
+          <span class="small-label">Plans</span>
+          <strong>Pricing</strong>
+        </a>
+        <a href="#catalog">
+          <span class="small-label">Store</span>
+          <strong>Catalog</strong>
+        </a>
+        <a href="#cart-preview" class="cart-link">
+          <span class="cart-count">3</span>
+          <strong>Cart</strong>
+        </a>
+      </div>
+    </header>
+
+    <nav class="subnav" aria-label="Store categories">
+      <a href="#catalog">Best Sellers</a>
+      <a href="#local-store">Local AI</a>
+      <a href="#api-store">Hosted APIs</a>
+      <a href="#compare">Compare Models</a>
+      <a href="#pricing">Subscriptions</a>
+      <a href="#faq">Help</a>
+    </nav>
+
+    <main id="top" class="page-shell">
+      <section class="hero-banner">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Storefront</p>
+          <h1>Build your AI stack the way people shop on ecommerce sites.</h1>
+          <p>
+            Browse local models, hosted APIs, and ready-to-buy bundles with
+            pricing, delivery style labels, comparison cards, and shopping CTAs.
+          </p>
+          <div class="hero-buttons">
+            <a class="primary-btn" href="#catalog">Shop best sellers</a>
+            <a class="secondary-btn" href="#compare">Compare local vs cloud</a>
+          </div>
+        </div>
+
+        <aside class="promo-board">
+          <article class="promo-tile large">
+            <span class="promo-tag">Top pick for developers</span>
+            <h2>Qwen 2.5 Coder Bundle</h2>
+            <p>Local-first coding model with strong multilingual support.</p>
+            <strong>Starting at free + hardware</strong>
+          </article>
+          <article class="promo-tile">
+            <span class="promo-tag">Fast shipping equivalent</span>
+            <h3>GPT-Class API</h3>
+            <p>Live in minutes. Managed infra. Team-ready.</p>
+          </article>
+          <article class="promo-tile">
+            <span class="promo-tag">Best private option</span>
+            <h3>Llama Private Stack</h3>
+            <p>Offline capable for internal assistants and secure workflows.</p>
+          </article>
+        </aside>
+      </section>
+
+      <section class="shop-grid">
+        <article class="shop-panel">
+          <div class="panel-head">
+            <h2>Shop by department</h2>
+          </div>
+          <div class="department-grid">
+            <a class="department-card" href="#local-store">
+              <span class="thumb thumb-cyan"></span>
+              <strong>Local Models</strong>
+              <p>Run on your own machine</p>
+            </a>
+            <a class="department-card" href="#api-store">
+              <span class="thumb thumb-blue"></span>
+              <strong>Hosted APIs</strong>
+              <p>Managed cloud access</p>
+            </a>
+            <a class="department-card" href="#catalog">
+              <span class="thumb thumb-gold"></span>
+              <strong>Vision</strong>
+              <p>Image and multimodal tools</p>
+            </a>
+            <a class="department-card" href="#catalog">
+              <span class="thumb thumb-green"></span>
+              <strong>Embeddings</strong>
+              <p>Search and retrieval stacks</p>
+            </a>
+          </div>
+        </article>
+
+        <article class="shop-panel cart-panel" id="cart-preview">
+          <div class="panel-head">
+            <h2>Cart preview</h2>
+          </div>
+          <ul class="cart-list">
+            <li>
+              <span>Qwen 2.5 Coder Bundle</span>
+              <strong>Free</strong>
+            </li>
+            <li>
+              <span>GPT-Class API Starter</span>
+              <strong>$19/mo</strong>
+            </li>
+            <li>
+              <span>Vision Forge Credits</span>
+              <strong>$12 pack</strong>
+            </li>
+          </ul>
+          <p class="cart-note">Frontend demo only. No real checkout logic.</p>
+          <a class="primary-btn full-width" href="#pricing">Proceed to plans</a>
+        </article>
+      </section>
+
+      <section class="shelf-section" id="catalog">
+        <div class="section-head">
+          <h2>Best sellers in AI models</h2>
+          <a href="#pricing">See more deals</a>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <span class="product-media thumb-cyan"></span>
+            <p class="product-type">Local model</p>
+            <h3>Qwen 2.5 Coder Bundle</h3>
+            <p class="product-copy">
+              Coding, debugging, and multilingual workflows for local setups.
+            </p>
+            <div class="rating-row">4.8 stars | 1.2k builders shortlisted this</div>
+            <p class="price-row"><strong>Free</strong> <span>with self-hosting</span></p>
+            <p class="delivery-row">Private by default | setup required</p>
+            <div class="card-actions">
+              <button>Add to cart</button>
+              <button class="ghost-btn">Buy now</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-media thumb-green"></span>
+            <p class="product-type">Local model</p>
+            <h3>Llama Private Stack</h3>
+            <p class="product-copy">
+              Strong option for secure internal assistants and offline workflows.
+            </p>
+            <div class="rating-row">4.6 stars | strong privacy fit</div>
+            <p class="price-row"><strong>Free</strong> <span>infra cost separate</span></p>
+            <p class="delivery-row">Offline capable | longer setup</p>
+            <div class="card-actions">
+              <button>Add to cart</button>
+              <button class="ghost-btn">Buy now</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-media thumb-blue"></span>
+            <p class="product-type">Hosted API</p>
+            <h3>GPT-Class API Starter</h3>
+            <p class="product-copy">
+              Fastest route to production for assistants, tools, and workflows.
+            </p>
+            <div class="rating-row">4.9 stars | instant access</div>
+            <p class="price-row"><strong>$19/mo</strong> <span>entry plan</span></p>
+            <p class="delivery-row">Managed hosting | low setup time</p>
+            <div class="card-actions">
+              <button>Add to cart</button>
+              <button class="ghost-btn">Buy now</button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-media thumb-gold"></span>
+            <p class="product-type">Hosted API</p>
+            <h3>Claude-Class Long Context</h3>
+            <p class="product-copy">
+              Best for long documents, policy analysis, and business writing.
+            </p>
+            <div class="rating-row">4.7 stars | long-context favorite</div>
+            <p class="price-row"><strong>$24/mo</strong> <span>plus usage</span></p>
+            <p class="delivery-row">Cloud only | reliable output quality</p>
+            <div class="card-actions">
+              <button>Add to cart</button>
+              <button class="ghost-btn">Buy now</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="split-store">
+        <article class="store-column" id="local-store">
+          <div class="section-head">
+            <h2>Local AI picks</h2>
+          </div>
+          <div class="mini-list">
+            <div class="mini-item">
+              <span class="mini-thumb thumb-cyan"></span>
+              <div>
+                <strong>Qwen 2.5 Dev Pack</strong>
+                <p>Best for coding and private copilots</p>
+              </div>
+              <span class="pill">Local</span>
+            </div>
+            <div class="mini-item">
+              <span class="mini-thumb thumb-green"></span>
+              <div>
+                <strong>Mistral Edge Kit</strong>
+                <p>Fast compact model for pilots and demos</p>
+              </div>
+              <span class="pill">Fast</span>
+            </div>
+            <div class="mini-item">
+              <span class="mini-thumb thumb-gold"></span>
+              <div>
+                <strong>Llama Secure Runtime</strong>
+                <p>Good fit for private enterprise workflows</p>
+              </div>
+              <span class="pill">Private</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="store-column" id="api-store">
+          <div class="section-head">
+            <h2>Hosted API picks</h2>
+          </div>
+          <div class="mini-list">
+            <div class="mini-item">
+              <span class="mini-thumb thumb-blue"></span>
+              <div>
+                <strong>GPT-Class API Pro</strong>
+                <p>Managed stack for product teams shipping quickly</p>
+              </div>
+              <span class="pill">Managed</span>
+            </div>
+            <div class="mini-item">
+              <span class="mini-thumb thumb-gold"></span>
+              <div>
+                <strong>Claude-Class Business</strong>
+                <p>Strong on long-form reasoning and analysis</p>
+              </div>
+              <span class="pill">Context</span>
+            </div>
+            <div class="mini-item">
+              <span class="mini-thumb thumb-cyan"></span>
+              <div>
+                <strong>Vision Forge API</strong>
+                <p>Creative generation for design and marketing</p>
+              </div>
+              <span class="pill">Vision</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="compare-section" id="compare">
+        <div class="section-head">
+          <h2>Compare before you buy</h2>
+        </div>
+        <div class="compare-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Local models</th>
+                <th>Hosted APIs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Privacy</td>
+                <td>High control</td>
+                <td>Provider managed</td>
+              </tr>
+              <tr>
+                <td>Setup</td>
+                <td>Needs configuration</td>
+                <td>Almost instant</td>
+              </tr>
+              <tr>
+                <td>Offline usage</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Scaling</td>
+                <td>Hardware limited</td>
+                <td>Easier to scale</td>
+              </tr>
+              <tr>
+                <td>Cost shape</td>
+                <td>Hardware and ops</td>
+                <td>Subscription and usage</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="pricing-section" id="pricing">
+        <div class="section-head">
+          <h2>Subscription offers</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <span class="plan-tag">Starter</span>
+            <h3>Builder Cart</h3>
+            <p class="plan-price">$0</p>
+            <ul>
+              <li>Catalog access</li>
+              <li>Comparison tools</li>
+              <li>Local model shortlists</li>
+            </ul>
+            <a class="primary-btn full-width" href="#catalog">Choose plan</a>
+          </article>
+          <article class="pricing-card featured">
+            <span class="plan-tag">Popular</span>
+            <h3>Team Operator</h3>
+            <p class="plan-price">$29/mo</p>
+            <ul>
+              <li>Hosted API bundles</li>
+              <li>Priority model picks</li>
+              <li>Deployment notes</li>
+            </ul>
+            <a class="primary-btn full-width" href="#catalog">Choose plan</a>
+          </article>
+          <article class="pricing-card">
+            <span class="plan-tag">Enterprise</span>
+            <h3>Hybrid Stack</h3>
+            <p class="plan-price">Custom</p>
+            <ul>
+              <li>Local plus cloud recommendations</li>
+              <li>Private deployment guidance</li>
+              <li>Architecture-ready bundles</li>
+            </ul>
+            <a class="primary-btn full-width" href="#catalog">Talk to sales</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq">
+        <div class="section-head">
+          <h2>Store FAQs</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-card">
+            <h3>Is this a real store?</h3>
+            <p>No. It is a frontend-only ecommerce assignment.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Why mix local and cloud models?</h3>
+            <p>Because real buyers compare privacy and convenience together.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Why does it feel like an online marketplace?</h3>
+            <p>That is the goal: AI presented with shopping-style layout and CTAs.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
