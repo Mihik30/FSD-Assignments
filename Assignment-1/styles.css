@@ -1,0 +1,152 @@
+:root {
+  --page-bg: #f7f2df;
+  --panel-bg: rgba(255, 255, 255, 0.74);
+  --panel-border: rgba(128, 79, 22, 0.15);
+  --ink: #2a2114;
+  --muted: #6c5a42;
+  --accent: #8a4f14;
+  --accent-soft: #d9b486;
+  --table-stripe: rgba(138, 79, 20, 0.06);
+  --table-hover: rgba(138, 79, 20, 0.16);
+  --shadow: 0 24px 45px rgba(70, 45, 11, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 34%),
+    linear-gradient(135deg, #fff6dc, #f1e1bd);
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.intro {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.card {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+}
+
+.card + .card {
+  margin-top: 1.5rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.section-head h2 {
+  margin-bottom: 0.2rem;
+  font-size: 1.55rem;
+}
+
+.section-head p {
+  max-width: 450px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+thead th {
+  background: linear-gradient(135deg, #8a4f14, #b86e25);
+  color: #fff9f0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+th,
+td {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(42, 33, 20, 0.1);
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--table-stripe);
+}
+
+tbody tr:hover {
+  background: var(--table-hover);
+  transition: background-color 0.2s ease;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 1.2rem, 100%);
+    padding-top: 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  th,
+  td {
+    min-width: 160px;
+    padding: 0.8rem;
+  }
+}

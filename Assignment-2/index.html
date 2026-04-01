@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2 | Mihik Shah Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <main class="terminal-shell">
+      <header class="terminal-window hero">
+        <div class="window-bar">
+          <span class="dot red"></span>
+          <span class="dot amber"></span>
+          <span class="dot green"></span>
+          <span class="window-title">mihik@portfolio:~</span>
+        </div>
+        <div class="window-body">
+          <p class="prompt">$ whoami</p>
+          <h1>Mihik Shah</h1>
+          <p class="summary">
+            Computer Science undergraduate building AI-backed systems, backend
+            workflows, and security-focused software.
+          </p>
+          <div class="hero-grid">
+            <div class="stat-card">
+              <span class="label">Location</span>
+              <strong>Pune, India</strong>
+            </div>
+            <div class="stat-card">
+              <span class="label">GitHub</span>
+              <a href="https://github.com/Mihik30" target="_blank" rel="noreferrer"
+                >github.com/Mihik30</a
+              >
+            </div>
+            <div class="stat-card">
+              <span class="label">Email</span>
+              <a href="mailto:mihiksshah@gmail.com">mihiksshah@gmail.com</a>
+            </div>
+            <div class="stat-card">
+              <span class="label">Phone</span>
+              <a href="tel:+917588669292">+91 75886 69292</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="terminal-window">
+        <div class="window-bar">
+          <span class="window-title">profile.log</span>
+        </div>
+        <div class="window-body split-layout">
+          <div>
+            <p class="prompt">$ cat summary.txt</p>
+            <p>
+              Computer Science undergraduate with hands-on experience across
+              LLM systems, FastAPI backends, semantic retrieval workflows, and
+              vulnerability research. Interested in software and security roles
+              at the intersection of AI and threat intelligence.
+            </p>
+          </div>
+          <div>
+            <p class="prompt">$ cat education.txt</p>
+            <div class="info-block">
+              <h2>Pimpri Chinchwad College of Engineering</h2>
+              <p>B.Tech in Computer Science Engineering</p>
+              <p>2023 - 2027 | SGPA: 8.0</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-window">
+        <div class="window-bar">
+          <span class="window-title">experience.sh</span>
+        </div>
+        <div class="window-body">
+          <p class="prompt">$ ./print_experience --recent-first</p>
+          <div class="timeline">
+            <article class="timeline-card">
+              <div class="timeline-head">
+                <h2>Software Development Intern</h2>
+                <span>Feb 2026 - Present</span>
+              </div>
+              <p class="org">Finiq Consulting</p>
+              <ul>
+                <li>
+                  Built an AI-powered workforce intelligence engine that
+                  ingests weekly reports from Excel and email into SQL Server.
+                </li>
+                <li>
+                  Developed FastAPI APIs and LLM-driven query flows for
+                  natural-language search, semantic retrieval, and analytics.
+                </li>
+                <li>
+                  Implemented embedding-based insight generation for
+                  collaboration trends, repeated-work detection, and submission
+                  analysis.
+                </li>
+              </ul>
+            </article>
+
+            <article class="timeline-card">
+              <div class="timeline-head">
+                <h2>Software Development Intern</h2>
+                <span>May 2025 - Aug 2025</span>
+              </div>
+              <p class="org">Benison Technologies Pvt. Ltd.</p>
+              <ul>
+                <li>
+                  Contributed to migration of a production platform from
+                  Angular to React.js for better performance and maintainability.
+                </li>
+                <li>
+                  Built reusable dashboard components for device statistics,
+                  monitoring, and management workflows backed by REST APIs.
+                </li>
+                <li>
+                  Used AI-assisted development tooling to accelerate delivery
+                  and refactoring.
+                </li>
+              </ul>
+            </article>
+
+            <article class="timeline-card">
+              <div class="timeline-head">
+                <h2>Autonomous Engineer</h2>
+                <span>May 2024 - Feb 2025</span>
+              </div>
+              <p class="org">Team Maverick India</p>
+              <ul>
+                <li>
+                  Developed perception and control algorithms for autonomous
+                  ground and fixed-wing vehicles using Python, OpenCV, and ROS.
+                </li>
+                <li>
+                  Worked with mechanical and electronics teams to integrate
+                  software into real-world hardware systems.
+                </li>
+              </ul>
+            </article>
+
+            <article class="timeline-card">
+              <div class="timeline-head">
+                <h2>Bug Bounty Hunter</h2>
+                <span>Ongoing</span>
+              </div>
+              <p class="org">HackerOne - Private Program (Vercel)</p>
+              <ul>
+                <li>
+                  Reported a usage-limit bypass vulnerability through structured
+                  analysis and ethical exploitation techniques.
+                </li>
+                <li>
+                  Focused on logic flaws, access control issues, and API
+                  security testing in bug bounty workflows.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-window">
+        <div class="window-bar">
+          <span class="window-title">projects.json</span>
+        </div>
+        <div class="window-body">
+          <p class="prompt">$ ls projects/ --featured</p>
+          <div class="project-grid">
+            <article class="project-card featured">
+              <div class="project-meta">
+                <span class="tag">Resume Highlight</span>
+                <span class="lang">Python · LLMs · RAG</span>
+              </div>
+              <h2>Agentic Document Intelligence on Local LLMs</h2>
+              <p>
+                Built a manifest-driven question-answering pipeline for large
+                documents using locally deployed LLMs, with metadata-driven
+                retrieval and a decoupled benchmarking workflow.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="tag">GitHub</span>
+                <span class="lang">TypeScript</span>
+              </div>
+              <h2>solana-voting</h2>
+              <p>
+                Public Solana voting project with blockchain, solana, and
+                voting-system topics, plus a live deployment.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Mihik30/solana-voting"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
+                <a href="https://solanavotingg.vercel.app/" target="_blank" rel="noreferrer"
+                  >Live Demo</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="tag">GitHub</span>
+                <span class="lang">Python</span>
+              </div>
+              <h2>OpenQuiz-AI</h2>
+              <p>
+                Python utility for screen-area capture, OCR, and compilation of
+                extracted text into a clipboard-ready format.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Mihik30/OpenQuiz-AI"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="tag">GitHub</span>
+                <span class="lang">TypeScript</span>
+              </div>
+              <h2>Solana-Based-Voting-System</h2>
+              <p>
+                A second public Solana voting codebase that reinforces your
+                blockchain and election-platform work from the resume.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Mihik30/Solana-Based-Voting-System"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="tag">GitHub</span>
+                <span class="lang">JavaScript</span>
+              </div>
+              <h2>expense-tracker</h2>
+              <p>
+                Front-end budget tracking project that demonstrates practical UI
+                work with interactive JavaScript.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Mihik30/expense-tracker"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-meta">
+                <span class="tag">GitHub</span>
+                <span class="lang">Jupyter Notebook</span>
+              </div>
+              <h2>Dogecoin-Price-Prediction</h2>
+              <p>
+                Machine learning repository tagged with regression and
+                random-forest topics, aligned with your ML competition profile.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Mihik30/Dogecoin-Price-Prediction"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repository</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-window">
+        <div class="window-bar">
+          <span class="window-title">skills.env</span>
+        </div>
+        <div class="window-body split-layout">
+          <div>
+            <p class="prompt">$ printenv LANG_STACK</p>
+            <div class="chip-wrap">
+              <span class="chip">C/C++</span>
+              <span class="chip">Python</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">SQL</span>
+            </div>
+          </div>
+          <div>
+            <p class="prompt">$ printenv AI_AND_DATA</p>
+            <div class="chip-wrap">
+              <span class="chip">LLMs</span>
+              <span class="chip">Embeddings</span>
+              <span class="chip">RAG</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">OpenCV</span>
+            </div>
+          </div>
+          <div>
+            <p class="prompt">$ printenv WEB_STACK</p>
+            <div class="chip-wrap">
+              <span class="chip">React.js</span>
+              <span class="chip">Angular</span>
+              <span class="chip">Redux</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express.js</span>
+              <span class="chip">REST APIs</span>
+            </div>
+          </div>
+          <div>
+            <p class="prompt">$ printenv SECURITY_AND_TOOLS</p>
+            <div class="chip-wrap">
+              <span class="chip">Vulnerability Analysis</span>
+              <span class="chip">Bug Bounty</span>
+              <span class="chip">HackerOne</span>
+              <span class="chip">Docker</span>
+              <span class="chip">ROS</span>
+              <span class="chip">Git</span>
+              <span class="chip">Bitbucket</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="terminal-window">
+        <div class="window-bar">
+          <span class="window-title">achievements.out</span>
+        </div>
+        <div class="window-body split-layout">
+          <div class="achievement-card">
+            <p class="prompt">$ cat competitive_programming.txt</p>
+            <p>Codeforces Rating: 1004</p>
+            <p>CodeChef Rating: 1110</p>
+          </div>
+          <div class="achievement-card">
+            <p class="prompt">$ cat awards.txt</p>
+            <p>2nd Prize - ML Mania machine learning competition</p>
+          </div>
+          <div class="achievement-card">
+            <p class="prompt">$ cat leadership.txt</p>
+            <p>
+              Coordinated E-Paradox, a statewide coding competition with 500+
+              participants, leading a team of 15+ at Spectrum 2023.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
