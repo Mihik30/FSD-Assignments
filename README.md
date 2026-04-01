@@ -47,19 +47,13 @@ index.html
 
 ## GitHub Pages
 
-- Homepage: `https://mihik30.github.io/FSD-Assignments/`
-- Assignment 1: `https://mihik30.github.io/FSD-Assignments/Assignment-1/`
-- Assignment 2: `https://mihik30.github.io/FSD-Assignments/Assignment-2/`
-- Assignment 3: `https://mihik30.github.io/FSD-Assignments/Assignment-3/`
+- [Homepage](https://mihik30.github.io/FSD-Assignments/)
+- [Assignment 1](https://mihik30.github.io/FSD-Assignments/Assignment-1/)
+- [Assignment 2](https://mihik30.github.io/FSD-Assignments/Assignment-2/)
+- [Assignment 3](https://mihik30.github.io/FSD-Assignments/Assignment-3/)
 
 ## Tech Stack
 
 - HTML5
 - CSS3
 
-## Status
-
-- Assignment 1: complete
-- Assignment 2: complete
-- Assignment 3: complete
-- Assignment 4: pending
