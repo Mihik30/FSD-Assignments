@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 4 | Monsoon Metrics Weather Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="dashboard-shell">
+      <header class="hero">
+        <p class="eyebrow">Assignment 4 • Interactive Dashboard</p>
+        <h1>Monsoon Metrics Lab</h1>
+        <p class="hero-copy">
+          Track weekly weather behavior with interactive charts for temperature,
+          humidity, and rainfall. Switch cities and refresh to simulate live
+          weather feed updates.
+        </p>
+      </header>
+
+      <section class="controls">
+        <label for="city-select">City Dataset</label>
+        <select id="city-select" aria-label="Select city weather dataset">
+          <option value="Shillong">Shillong</option>
+          <option value="Leh">Leh</option>
+          <option value="Kochi">Kochi</option>
+          <option value="Jaisalmer">Jaisalmer</option>
+          <option value="Gangtok">Gangtok</option>
+        </select>
+        <button id="refresh-btn" type="button">Refresh Data</button>
+        <p id="last-updated" aria-live="polite"></p>
+      </section>
+
+      <section class="stat-grid">
+        <article class="stat-card">
+          <p class="stat-label">Avg Temp</p>
+          <p class="stat-value"><span id="avg-temp">--</span><small>°C</small></p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-label">Avg Humidity</p>
+          <p class="stat-value"><span id="avg-humidity">--</span><small>%</small></p>
+        </article>
+        <article class="stat-card">
+          <p class="stat-label">Total Rainfall</p>
+          <p class="stat-value"><span id="total-rainfall">--</span><small>mm</small></p>
+        </article>
+      </section>
+
+      <section class="chart-grid">
+        <article class="chart-card">
+          <h2>Temperature Trend</h2>
+          <canvas id="temperature-chart"></canvas>
+        </article>
+        <article class="chart-card">
+          <h2>Humidity Levels</h2>
+          <canvas id="humidity-chart"></canvas>
+        </article>
+        <article class="chart-card pie-card">
+          <h2>Rainfall Distribution</h2>
+          <canvas id="rainfall-chart"></canvas>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

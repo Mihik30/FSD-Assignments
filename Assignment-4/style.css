@@ -1,0 +1,215 @@
+:root {
+  --bg: #071124;
+  --bg-soft: #0d1d3a;
+  --panel: rgba(8, 25, 52, 0.9);
+  --line: rgba(161, 206, 255, 0.24);
+  --text: #e9f4ff;
+  --muted: #a8bed8;
+  --accent-cyan: #2dd4ff;
+  --accent-gold: #f8c15a;
+  --accent-green: #41df97;
+  --shadow: 0 16px 40px rgba(2, 10, 22, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 18% 10%, rgba(45, 212, 255, 0.22), transparent 32%),
+    radial-gradient(circle at 85% 85%, rgba(65, 223, 151, 0.17), transparent 30%),
+    linear-gradient(165deg, #010816, var(--bg) 45%, #091a35);
+  padding: 1rem;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+.dashboard-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.hero,
+.controls,
+.stat-card,
+.chart-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 1.4rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+h1 {
+  font-family: "Sora", "Segoe UI", sans-serif;
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+}
+
+.hero-copy {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.controls {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 150px 1fr 170px auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+label {
+  font-weight: 700;
+}
+
+select,
+button {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+}
+
+select {
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+button {
+  background: linear-gradient(135deg, var(--accent-cyan), #38a6ff);
+  color: #002447;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.16s ease, filter 0.16s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+#last-updated {
+  justify-self: end;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.stat-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.stat-card {
+  padding: 1rem;
+  background:
+    linear-gradient(180deg, rgba(161, 206, 255, 0.1), rgba(0, 0, 0, 0)),
+    var(--panel);
+}
+
+.stat-label {
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.stat-value {
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.stat-value small {
+  margin-left: 0.32rem;
+  font-size: 0.95rem;
+  color: var(--accent-green);
+}
+
+.chart-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.chart-card {
+  padding: 1rem;
+  min-height: 350px;
+  animation: fade-up 0.45s ease both;
+}
+
+.chart-card h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.pie-card {
+  grid-column: span 2;
+  min-height: 420px;
+}
+
+canvas {
+  width: 100% !important;
+  height: 290px !important;
+}
+
+.pie-card canvas {
+  height: 330px !important;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  #last-updated {
+    justify-self: start;
+  }
+
+  .chart-grid,
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pie-card {
+    grid-column: span 1;
+    min-height: 350px;
+  }
+}
