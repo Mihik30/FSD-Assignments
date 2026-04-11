@@ -8,6 +8,7 @@
   --accent-cyan: #2dd4ff;
   --accent-gold: #f8c15a;
   --accent-green: #41df97;
+  --warn: #ff7a7a;
   --shadow: 0 16px 40px rgba(2, 10, 22, 0.4);
 }
 
@@ -41,7 +42,9 @@ p {
 .hero,
 .controls,
 .stat-card,
-.chart-card {
+.chart-card,
+.status-banner,
+.error-banner {
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--panel);
@@ -74,11 +77,35 @@ h1 {
   margin-bottom: 0;
 }
 
+.status-banner {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+#sync-status {
+  margin: 0;
+  color: var(--muted);
+}
+
+.condition-chip {
+  border-radius: 999px;
+  border: 1px solid rgba(45, 212, 255, 0.35);
+  background: rgba(45, 212, 255, 0.12);
+  color: var(--accent-cyan);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
 .controls {
   margin-top: 1rem;
   padding: 1rem;
   display: grid;
-  grid-template-columns: 150px 1fr 170px auto;
+  grid-template-columns: 150px 1fr 170px 120px auto;
   gap: 0.75rem;
   align-items: center;
 }
@@ -111,6 +138,39 @@ button {
 button:hover {
   transform: translateY(-1px);
   filter: brightness(1.05);
+}
+
+button:disabled,
+select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  background: rgba(161, 206, 255, 0.12);
+  color: var(--text);
+}
+
+#error-banner {
+  margin-top: 1rem;
+}
+
+.error-banner {
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-color: rgba(255, 122, 122, 0.4);
+  background: rgba(94, 28, 34, 0.45);
+}
+
+.error-banner p {
+  margin: 0;
+  color: #ffc8c8;
+}
+
+.hidden {
+  display: none;
 }
 
 #last-updated {
@@ -194,13 +254,19 @@ canvas {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .controls {
     grid-template-columns: 1fr;
   }
 
   #last-updated {
     justify-self: start;
+  }
+
+  .status-banner,
+  .error-banner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .chart-grid,

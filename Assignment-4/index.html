@@ -15,14 +15,19 @@
   <body>
     <main class="dashboard-shell">
       <header class="hero">
-        <p class="eyebrow">Assignment 4 • Interactive Dashboard</p>
+        <p class="eyebrow">Assignment 4 - Interactive Dashboard</p>
         <h1>Monsoon Metrics Lab</h1>
         <p class="hero-copy">
           Track weekly weather behavior with interactive charts for temperature,
-          humidity, and rainfall. Switch cities and refresh to simulate live
-          weather feed updates.
+          humidity, and rainfall. Switch cities and refresh to load live weather
+          updates from OpenWeather.
         </p>
       </header>
+
+      <section class="status-banner" id="status-banner" aria-live="polite">
+        <p id="sync-status">Ready to load weather feed.</p>
+        <span class="condition-chip" id="condition-chip">--</span>
+      </section>
 
       <section class="controls">
         <label for="city-select">City Dataset</label>
@@ -34,13 +39,19 @@
           <option value="Gangtok">Gangtok</option>
         </select>
         <button id="refresh-btn" type="button">Refresh Data</button>
+        <button id="unit-toggle" type="button" class="secondary-btn">Use &deg;F</button>
         <p id="last-updated" aria-live="polite"></p>
+      </section>
+
+      <section class="error-banner hidden" id="error-banner" aria-live="assertive">
+        <p id="error-text"></p>
+        <button id="retry-btn" type="button" class="secondary-btn">Retry</button>
       </section>
 
       <section class="stat-grid">
         <article class="stat-card">
           <p class="stat-label">Avg Temp</p>
-          <p class="stat-value"><span id="avg-temp">--</span><small>°C</small></p>
+          <p class="stat-value"><span id="avg-temp">--</span><small id="temp-unit">&deg;C</small></p>
         </article>
         <article class="stat-card">
           <p class="stat-label">Avg Humidity</p>
@@ -54,15 +65,15 @@
 
       <section class="chart-grid">
         <article class="chart-card">
-          <h2>Temperature Trend</h2>
+          <h2>Temperature Trend (Now + 5 Day)</h2>
           <canvas id="temperature-chart"></canvas>
         </article>
         <article class="chart-card">
-          <h2>Humidity Levels</h2>
+          <h2>Humidity Levels (Now + 5 Day)</h2>
           <canvas id="humidity-chart"></canvas>
         </article>
         <article class="chart-card pie-card">
-          <h2>Rainfall Distribution</h2>
+          <h2>Rainfall Share (Donut View)</h2>
           <canvas id="rainfall-chart"></canvas>
         </article>
       </section>
