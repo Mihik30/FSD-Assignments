@@ -47,7 +47,7 @@
           <strong>Catalog</strong>
         </a>
         <a href="#cart-preview" class="cart-link">
-          <span class="cart-count">3</span>
+          <span class="cart-count">0</span>
           <strong>Cart</strong>
         </a>
       </div>
@@ -83,16 +83,19 @@
             <h2>Qwen 2.5 Coder Bundle</h2>
             <p>Local-first coding model with strong multilingual support.</p>
             <strong>Starting at free + hardware</strong>
+            <button class="primary-btn add-to-cart-btn" data-name="Qwen 2.5 Coder Bundle" data-price="Free">Add to cart</button>
           </article>
           <article class="promo-tile">
             <span class="promo-tag">Fast shipping equivalent</span>
             <h3>GPT-Class API</h3>
             <p>Live in minutes. Managed infra. Team-ready.</p>
+            <button class="secondary-btn add-to-cart-btn" data-name="GPT-Class API Starter" data-price="$19/mo">Add to cart</button>
           </article>
           <article class="promo-tile">
             <span class="promo-tag">Best private option</span>
             <h3>Llama Private Stack</h3>
             <p>Offline capable for internal assistants and secure workflows.</p>
+            <button class="secondary-btn add-to-cart-btn" data-name="Llama Private Stack" data-price="Free">Add to cart</button>
           </article>
         </aside>
       </section>
@@ -129,20 +132,11 @@
         <article class="shop-panel cart-panel" id="cart-preview">
           <div class="panel-head">
             <h2>Cart preview</h2>
+            <button class="ghost-btn" id="clear-cart">Clear</button>
           </div>
-          <ul class="cart-list">
-            <li>
-              <span>Qwen 2.5 Coder Bundle</span>
-              <strong>Free</strong>
-            </li>
-            <li>
-              <span>GPT-Class API Starter</span>
-              <strong>$19/mo</strong>
-            </li>
-            <li>
-              <span>Vision Forge Credits</span>
-              <strong>$12 pack</strong>
-            </li>
+          <ul class="cart-list" id="cart-items">
+            <!-- Dynamic items will appear here -->
+            <li class="empty-msg">Your cart is empty.</li>
           </ul>
           <p class="cart-note">Frontend demo only. No real checkout logic.</p>
           <a class="primary-btn full-width" href="#pricing">Proceed to plans</a>
@@ -166,7 +160,7 @@
             <p class="price-row"><strong>Free</strong> <span>with self-hosting</span></p>
             <p class="delivery-row">Private by default | setup required</p>
             <div class="card-actions">
-              <button>Add to cart</button>
+              <button class="add-to-cart-btn" data-name="Qwen 2.5 Coder Bundle" data-price="Free">Add to cart</button>
               <button class="ghost-btn">Buy now</button>
             </div>
           </article>
@@ -182,7 +176,7 @@
             <p class="price-row"><strong>Free</strong> <span>infra cost separate</span></p>
             <p class="delivery-row">Offline capable | longer setup</p>
             <div class="card-actions">
-              <button>Add to cart</button>
+              <button class="add-to-cart-btn" data-name="Llama Private Stack" data-price="Free">Add to cart</button>
               <button class="ghost-btn">Buy now</button>
             </div>
           </article>
@@ -198,7 +192,7 @@
             <p class="price-row"><strong>$19/mo</strong> <span>entry plan</span></p>
             <p class="delivery-row">Managed hosting | low setup time</p>
             <div class="card-actions">
-              <button>Add to cart</button>
+              <button class="add-to-cart-btn" data-name="GPT-Class API Starter" data-price="$19/mo">Add to cart</button>
               <button class="ghost-btn">Buy now</button>
             </div>
           </article>
@@ -214,7 +208,7 @@
             <p class="price-row"><strong>$24/mo</strong> <span>plus usage</span></p>
             <p class="delivery-row">Cloud only | reliable output quality</p>
             <div class="card-actions">
-              <button>Add to cart</button>
+              <button class="add-to-cart-btn" data-name="Claude-Class Long Context" data-price="$24/mo">Add to cart</button>
               <button class="ghost-btn">Buy now</button>
             </div>
           </article>
@@ -233,7 +227,7 @@
                 <strong>Qwen 2.5 Dev Pack</strong>
                 <p>Best for coding and private copilots</p>
               </div>
-              <span class="pill">Local</span>
+              <button class="add-to-cart-btn pill" data-name="Qwen 2.5 Dev Pack" data-price="Free">Add</button>
             </div>
             <div class="mini-item">
               <span class="mini-thumb thumb-green"></span>
@@ -241,7 +235,7 @@
                 <strong>Mistral Edge Kit</strong>
                 <p>Fast compact model for pilots and demos</p>
               </div>
-              <span class="pill">Fast</span>
+              <button class="add-to-cart-btn pill" data-name="Mistral Edge Kit" data-price="Free">Add</button>
             </div>
             <div class="mini-item">
               <span class="mini-thumb thumb-gold"></span>
@@ -249,7 +243,7 @@
                 <strong>Llama Secure Runtime</strong>
                 <p>Good fit for private enterprise workflows</p>
               </div>
-              <span class="pill">Private</span>
+              <button class="add-to-cart-btn pill" data-name="Llama Secure Runtime" data-price="Free">Add</button>
             </div>
           </div>
         </article>
@@ -265,7 +259,7 @@
                 <strong>GPT-Class API Pro</strong>
                 <p>Managed stack for product teams shipping quickly</p>
               </div>
-              <span class="pill">Managed</span>
+              <button class="add-to-cart-btn pill" data-name="GPT-Class API Pro" data-price="$99/mo">Add</button>
             </div>
             <div class="mini-item">
               <span class="mini-thumb thumb-gold"></span>
@@ -273,7 +267,7 @@
                 <strong>Claude-Class Business</strong>
                 <p>Strong on long-form reasoning and analysis</p>
               </div>
-              <span class="pill">Context</span>
+              <button class="add-to-cart-btn pill" data-name="Claude-Class Business" data-price="$49/mo">Add</button>
             </div>
             <div class="mini-item">
               <span class="mini-thumb thumb-cyan"></span>
@@ -281,7 +275,7 @@
                 <strong>Vision Forge API</strong>
                 <p>Creative generation for design and marketing</p>
               </div>
-              <span class="pill">Vision</span>
+              <button class="add-to-cart-btn pill" data-name="Vision Forge API" data-price="$29/mo">Add</button>
             </div>
           </div>
         </article>
@@ -392,5 +386,7 @@
         </div>
       </section>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
