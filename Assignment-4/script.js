@@ -1,4 +1,4 @@
-const chartTextColor = "#dbeefe";
+ï»¿const chartTextColor = "#dbeefe";
 const axisGridColor = "rgba(161, 206, 255, 0.2)";
 const cityCountryCode = "IN";
 
@@ -199,7 +199,7 @@ function updateStats(displayData) {
   avgTemp.textContent = tempAverage.toFixed(1);
   avgHumidity.textContent = humidityAverage.toFixed(1);
   totalRainfall.textContent = rainfallTotal.toFixed(1);
-  tempUnit.textContent = currentUnit === "F" ? "°F" : "°C";
+  tempUnit.textContent = currentUnit === "F" ? "Â°F" : "Â°C";
 }
 
 function updateHeaderMeta(displayData) {
@@ -220,9 +220,14 @@ const donutCenterPlugin = {
       return;
     }
 
+    const meta = chart.getDatasetMeta(0);
+    if (!meta || !meta.data || meta.data.length === 0 || !meta.data[0]) {
+      return;
+    }
+
     const { ctx } = chart;
-    const x = chart.getDatasetMeta(0).data[0].x;
-    const y = chart.getDatasetMeta(0).data[0].y;
+    const x = meta.data[0].x;
+    const y = meta.data[0].y;
 
     ctx.save();
     ctx.fillStyle = "#e9f4ff";
@@ -245,7 +250,7 @@ function createTemperatureChart() {
     data: {
       labels: [],
       datasets: [{
-        label: "Temperature (°C)",
+        label: "Temperature (Â°C)",
         data: [],
         borderColor: "#2dd4ff",
         backgroundColor: "rgba(45, 212, 255, 0.22)",
@@ -360,7 +365,7 @@ function updateCharts(displayData) {
 
   temperatureChart.data.labels = displayData.labels;
   temperatureChart.data.datasets[0].data = displayData.temperature;
-  temperatureChart.data.datasets[0].label = `Temperature (°${currentUnit})`;
+  temperatureChart.data.datasets[0].label = `Temperature (Â°${currentUnit})`;
 
   humidityChart.data.labels = displayData.labels;
   humidityChart.data.datasets[0].data = displayData.humidity;
@@ -404,7 +409,7 @@ async function loadDashboard(forceRefresh = false) {
 
 function toggleUnit() {
   currentUnit = currentUnit === "C" ? "F" : "C";
-  unitToggleButton.textContent = currentUnit === "C" ? "Use °F" : "Use °C";
+  unitToggleButton.textContent = currentUnit === "C" ? "Use Â°F" : "Use Â°C";
   if (latestMetricData) {
     renderDashboard(latestMetricData);
   }
