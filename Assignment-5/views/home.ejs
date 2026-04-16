@@ -1,0 +1,60 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main>
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Curated travel experiences</p>
+        <h1>Explore iconic destinations with smart itineraries.</h1>
+        <p class="hero-copy">
+          Skyline Trails helps you discover premium tours, flexible plans, and
+          verified local guides. Book your next trip with confidence.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="/packages">Browse Packages</a>
+          <a class="btn btn-secondary" href="/contact">Plan My Trip</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Why travelers choose us</h3>
+        <ul>
+          <li>End-to-end itinerary planning</li>
+          <li>Trusted stays and guided activities</li>
+          <li>Transparent pricing with no hidden charges</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-space">
+    <div class="section-title-wrap">
+      <h2>Featured packages</h2>
+      <a href="/packages" class="inline-link">View all packages</a>
+    </div>
+
+    <div class="package-grid">
+      <% if (featuredPackages.length === 0) { %>
+      <p class="empty-state">No featured packages available yet.</p>
+      <% } %>
+
+      <% featuredPackages.forEach((pkg) => { %>
+      <article class="package-card">
+        <img src="<%= pkg.image %>" alt="<%= pkg.name %>" />
+        <div class="package-card-body">
+          <p class="meta"><%= pkg.destination %> | <%= pkg.durationDays %> days</p>
+          <h3><%= pkg.name %></h3>
+          <p class="description"><%= pkg.description %></p>
+          <div class="card-bottom">
+            <p class="price"><%= formatINR(pkg.price) %></p>
+            <a href="/packages/<%= pkg._id %>" class="btn-text">Details</a>
+          </div>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

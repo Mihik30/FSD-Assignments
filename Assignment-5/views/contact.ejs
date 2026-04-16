@@ -1,0 +1,72 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container section-space">
+  <section class="contact-layout">
+    <div>
+      <p class="eyebrow">Travel inquiry</p>
+      <h1>Let us craft your trip plan</h1>
+      <p class="hero-copy">
+        Share your preferred package and dates. Our team will reach out with a
+        personalized itinerary and final quote.
+      </p>
+    </div>
+
+    <div class="form-panel">
+      <% if (success) { %>
+      <p class="alert success">Your inquiry has been submitted successfully.</p>
+      <% } %>
+
+      <% if (errors.length > 0) { %>
+      <div class="alert error">
+        <% errors.forEach((error) => { %>
+        <p><%= error %></p>
+        <% }) %>
+      </div>
+      <% } %>
+
+      <form action="/contact" method="POST" class="contact-form">
+        <label>
+          Full Name
+          <input type="text" name="name" value="<%= formData.name || '' %>" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" value="<%= formData.email || '' %>" required />
+        </label>
+        <label>
+          Phone
+          <input type="text" name="phone" value="<%= formData.phone || '' %>" required />
+        </label>
+        <label>
+          Select Package
+          <select name="packageId" required>
+            <option value="">Choose one</option>
+            <% packages.forEach((pkg) => { %>
+            <option value="<%= pkg._id %>" <%= formData.packageId === String(pkg._id) ? 'selected' : '' %>>
+              <%= pkg.name %> - <%= formatINR(pkg.price) %>
+            </option>
+            <% }) %>
+          </select>
+        </label>
+        <label>
+          Number of Travelers
+          <input type="number" name="travelers" min="1" max="20" value="<%= formData.travelers || '' %>" required />
+        </label>
+        <label>
+          Preferred Travel Date
+          <input type="date" name="travelDate" value="<%= formData.travelDate || '' %>" required />
+        </label>
+        <label>
+          Additional Notes
+          <textarea name="message" rows="4" placeholder="Tell us your preferences"><%= formData.message || '' %></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

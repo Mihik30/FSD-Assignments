@@ -1,6 +1,7 @@
 # FSD Assignments
 
-Static front-end assignments built with HTML5, CSS3, and JavaScript.
+Assignments built across front-end and full-stack topics, including HTML, CSS,
+JavaScript, Node.js, Express, and MongoDB.
 
 ## Assignments Included
 
@@ -27,6 +28,11 @@ Static front-end assignments built with HTML5, CSS3, and JavaScript.
 - Theme: bold data-lab dashboard with city-based simulation
 - Features: line, bar, and pie charts for temperature, humidity, and rainfall; city switching; refresh-based dynamic updates
 
+### Assignment 5 - Travel Agency Website (Node.js + Express + MongoDB)
+- Entry file: `Assignment-5/server.js`
+- Focus: full-stack website using Express, EJS, and MongoDB
+- Features: featured travel packages, package listing with filters, package details page, and booking inquiry form stored in MongoDB
+
 ## Folder Structure
 
 ```text
@@ -47,14 +53,25 @@ Assignment-4/
   style.css
   script.js
   README.md
+Assignment-5/
+  config/
+  controllers/
+  models/
+  public/
+  routes/
+  seed/
+  views/
+  package.json
+  server.js
+  README.md
 README.md
 index.html
 ```
 
 ## How To Run
 
-1. Open the assignment folder.
-2. Open `index.html` in a browser.
+1. For Assignments 1-4, open the assignment folder and open `index.html` in a browser.
+2. For Assignment 5, follow setup steps in `Assignment-5/README.md` and run the Express server.
 
 ## GitHub Pages
 
@@ -70,6 +87,9 @@ index.html
 - CSS3
 - JavaScript (ES6)
 - Chart.js
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
 
 ## Status
 
@@ -77,3 +97,4 @@ index.html
 - Assignment 2: complete
 - Assignment 3: complete
 - Assignment 4: complete
+- Assignment 5: complete

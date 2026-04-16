@@ -1,0 +1,10 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="/" class="brand">Skyline Trails</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Home</a>
+      <a href="/packages" class="<%= currentPath.startsWith('/packages') ? 'active' : '' %>">Packages</a>
+      <a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>">Contact</a>
+    </nav>
+  </div>
+</header>

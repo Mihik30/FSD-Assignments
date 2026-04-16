@@ -1,0 +1,42 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container section-space">
+  <article class="details-layout">
+    <img class="details-image" src="<%= pkg.image %>" alt="<%= pkg.name %>" />
+    <div class="details-panel">
+      <p class="eyebrow"><%= pkg.destination %></p>
+      <h1><%= pkg.name %></h1>
+      <p class="details-copy"><%= pkg.description %></p>
+
+      <div class="details-stats">
+        <div>
+          <h4>Duration</h4>
+          <p><%= pkg.durationDays %> days</p>
+        </div>
+        <div>
+          <h4>Rating</h4>
+          <p>⭐ <%= pkg.rating.toFixed(1) %> / 5</p>
+        </div>
+        <div>
+          <h4>Available Slots</h4>
+          <p><%= pkg.availableSlots %></p>
+        </div>
+      </div>
+
+      <div class="tags">
+        <% pkg.tags.forEach((tag) => { %>
+        <span><%= tag %></span>
+        <% }) %>
+      </div>
+
+      <div class="details-bottom">
+        <p class="price"><%= formatINR(pkg.price) %></p>
+        <a class="btn btn-primary" href="/contact">Book this package</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>
