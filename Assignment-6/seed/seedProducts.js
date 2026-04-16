@@ -16,7 +16,7 @@ const products = [
     inStock: true,
     tags: ["reasoning", "coding", "multimodal", "agents"],
     badges: ["Best Seller", "Enterprise Ready"],
-    image: "/images/openai.jpeg",
+    image: "/images/openai.png",
     description: "High-accuracy flagship API for complex reasoning, coding workflows, and agentic apps.",
     highlights: [
       "Strong code generation and debugging quality",
@@ -43,7 +43,7 @@ const products = [
     inStock: true,
     tags: ["deep reasoning", "math", "analysis"],
     badges: ["Advanced Reasoning", "Top Rated"],
-    image: "/images/openai.jpeg",
+    image: "/images/openai.png",
     description: "Reasoning-focused model for high-stakes tasks including planning, analysis, and technical problem solving.",
     highlights: [
       "Excellent chain-of-thought quality on difficult tasks",
@@ -70,7 +70,7 @@ const products = [
     inStock: true,
     tags: ["long context", "writing", "analysis"],
     badges: ["Long Context", "Popular"],
-    image: "/images/anthropic.png",
+    image: "/images/Anthropic_logo.svg",
     description: "Balanced and reliable API model for long-document workflows, product copy, and enterprise assistants.",
     highlights: [
       "High quality for structured writing and drafting",
@@ -97,7 +97,7 @@ const products = [
     inStock: true,
     tags: ["multimodal", "video", "reasoning"],
     badges: ["Multimodal", "New"],
-    image: "/images/gemini.jpeg",
+    image: "/images/gemini.png",
     description: "Latest multimodal model for text, image, and rich media understanding with robust reasoning.",
     highlights: [
       "Strong cross-modal retrieval and summarization",
@@ -124,7 +124,7 @@ const products = [
     inStock: true,
     tags: ["real-time", "assistant", "research"],
     badges: ["Realtime Insights"],
-    image: "/images/grok.png",
+    image: "/images/Grok.png",
     description: "Conversational API model optimized for fast interactions and continuously refreshed information tasks.",
     highlights: [
       "Low-latency responses for interactive products",
@@ -151,7 +151,7 @@ const products = [
     inStock: true,
     tags: ["open source", "on-prem", "privacy"],
     badges: ["On-Prem", "Cost Efficient"],
-    image: "/images/meta.png",
+    image: "/images/Meta-Logo.png",
     description: "Self-hosted deployment pack for Llama-based assistants with private data controls and infra templates.",
     highlights: [
       "Complete Docker and inference templates included",

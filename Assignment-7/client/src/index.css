@@ -1,0 +1,394 @@
+:root {
+  --bg: #f6fbf9;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --card: #ffffff;
+  --border: #d9e8e3;
+  --primary: #0f766e;
+  --primary-dark: #0b5f59;
+  --accent: #c2410c;
+  --danger: #b91c1c;
+  --shadow: 0 20px 40px rgba(2, 44, 34, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(15, 118, 110, 0.12), transparent 32%),
+    radial-gradient(circle at 95% 15%, rgba(194, 65, 12, 0.12), transparent 24%),
+    var(--bg);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+  padding: 1.5rem 0 2.2rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(246, 251, 249, 0.88);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-wrap {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.brand {
+  margin: 0.3rem 0 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-family: "Sora", "Segoe UI", sans-serif;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.55rem 0.82rem;
+  border-radius: 999px;
+}
+
+.top-nav a[aria-current="page"] {
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.intro-card,
+.form-card,
+.metric-card,
+.filter-row,
+.chart-card,
+.table-card {
+  padding: 1rem;
+}
+
+.intro-card h2,
+.form-card h2,
+.chart-card h3,
+.table-card h3 {
+  margin-top: 0;
+  font-family: "Sora", "Segoe UI", sans-serif;
+}
+
+.intro-card p,
+.intro-card li {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.intro-card ul {
+  margin: 0.9rem 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.field-grid .full {
+  grid-column: 1 / -1;
+}
+
+label,
+fieldset {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 0.4rem 0;
+  padding: 0.65rem 0.7rem;
+}
+
+legend {
+  font-size: 0.82rem;
+  padding: 0 0.25rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #cfe1da;
+  border-radius: 10px;
+  padding: 0.62rem 0.68rem;
+  font: inherit;
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.2);
+  border-color: #7ec3b8;
+}
+
+.rating-grid {
+  margin: 0.75rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.rating-grid span {
+  font-size: 0.8rem;
+}
+
+.inline-actions {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.pill,
+.btn-primary,
+.danger,
+.pagination button {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.pill {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: #e5f2ef;
+  color: var(--primary-dark);
+}
+
+.pill.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary {
+  margin-top: 0.4rem;
+  border-radius: 12px;
+  padding: 0.72rem 1rem;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.status {
+  border-radius: 10px;
+  margin: 0.4rem 0 0.8rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.status.success {
+  border: 1px solid #a7f3d0;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.status.error {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.admin-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.summary-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.metric-card strong {
+  font-size: 2rem;
+  font-family: "Sora", "Segoe UI", sans-serif;
+}
+
+.filter-row {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  align-items: center;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.chart-card.full {
+  grid-column: 1 / -1;
+}
+
+.table-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.danger {
+  background: #fee2e2;
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-weight: 700;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.pagination button {
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  background: #e8f2ef;
+}
+
+.pagination button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid,
+  .chart-grid,
+  .rating-grid,
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-row button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-wrap {
+    min-height: 94px;
+    align-items: flex-start;
+    padding-top: 0.8rem;
+  }
+
+  .top-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .top-nav a {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .filter-row {
+    grid-template-columns: 1fr;
+  }
+}

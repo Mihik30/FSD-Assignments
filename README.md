@@ -38,6 +38,11 @@ JavaScript, Node.js, Express, and MongoDB.
 - Focus: full-stack ecommerce website for latest AI models and bundles
 - Features: modern storefront UI, model catalog with search/filter/sort, product details, cart, checkout request flow, and order persistence in MongoDB
 
+### Assignment 7 - PCCOE Event Review Platform (React + Express + MongoDB)
+- Entry file: `Assignment-7/client/src/main.jsx` and `Assignment-7/server/server.js`
+- Focus: full-stack event feedback platform with analytics dashboard
+- Features: review submission form, admin filtering dashboard, chart analytics, and MongoDB-backed clubs/events/reviews data
+
 ## Folder Structure
 
 ```text
@@ -80,6 +85,10 @@ Assignment-6/
   package.json
   server.js
   README.md
+Assignment-7/
+  client/
+  server/
+  README.md
 README.md
 index.html
 ```
@@ -87,7 +96,7 @@ index.html
 ## How To Run
 
 1. For Assignments 1-4, open the assignment folder and open `index.html` in a browser.
-2. For Assignments 5 and 6, follow setup steps in each folder README and run the Express server.
+2. For Assignments 5, 6, and 7, follow setup steps in each folder README and run the app servers.
 
 ## GitHub Pages
 
@@ -115,3 +124,4 @@ index.html
 - Assignment 4: complete
 - Assignment 5: complete
 - Assignment 6: complete
+- Assignment 7: complete
