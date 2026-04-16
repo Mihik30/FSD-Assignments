@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container section-space">
+  <section class="card success-card">
+    <p class="eyebrow">Request submitted</p>
+    <h1>Thanks, <%= order.customerName %>!</h1>
+    <p>
+      Your order request has been created. Our solutions team will contact you at
+      <strong><%= order.email %></strong>.
+    </p>
+    <p>Reference ID: <strong><%= order._id %></strong></p>
+    <p>Total Monthly Estimate: <strong><%= formatUSD(order.totalMonthly) %></strong></p>
+    <a href="/products" class="btn btn-primary">Continue Shopping</a>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

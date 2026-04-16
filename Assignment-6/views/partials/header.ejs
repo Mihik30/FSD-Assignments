@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/">
+      <span class="brand-chip">AI</span>
+      <span>Commerce Hub</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Home</a>
+      <a href="/products" class="<%= currentPath.startsWith('/products') ? 'active' : '' %>">Catalog</a>
+      <a href="/checkout" class="<%= currentPath === '/checkout' ? 'active' : '' %>">Checkout</a>
+      <a href="/cart" class="cart-link <%= currentPath === '/cart' ? 'active' : '' %>">
+        Cart
+        <span class="cart-count"><%= cartCount %></span>
+      </a>
+    </nav>
+  </div>
+</header>

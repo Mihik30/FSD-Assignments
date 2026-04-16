@@ -1,0 +1,55 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container section-space">
+  <section class="section-head">
+    <h1>Your Cart</h1>
+  </section>
+
+  <% if (cart.items.length === 0) { %>
+  <section class="card empty-card">
+    <p>Your cart is empty. Add models from the catalog to continue.</p>
+    <a href="/products" class="btn btn-primary">Browse Products</a>
+  </section>
+  <% } else { %>
+  <section class="card cart-table">
+    <% cart.items.forEach((item) => { %>
+    <article class="cart-row">
+      <div class="cart-logo-wrap">
+        <img src="<%= item.image %>" alt="<%= item.provider %> logo" class="logo-image" />
+      </div>
+      <div>
+        <h3><a href="/products/<%= item.slug %>"><%= item.name %></a></h3>
+        <p class="meta"><%= item.provider %> | <%= item.category.toUpperCase() %></p>
+        <p class="price"><%= formatUSD(item.priceMonthly) %><small>/mo</small></p>
+      </div>
+      <div class="cart-controls">
+        <form method="POST" action="/cart/update/<%= item.productId %>">
+          <input type="hidden" name="action" value="decrease" />
+          <button type="submit" class="ctrl-btn">-</button>
+        </form>
+        <span><%= item.quantity %></span>
+        <form method="POST" action="/cart/update/<%= item.productId %>">
+          <input type="hidden" name="action" value="increase" />
+          <button type="submit" class="ctrl-btn">+</button>
+        </form>
+        <form method="POST" action="/cart/update/<%= item.productId %>">
+          <input type="hidden" name="action" value="remove" />
+          <button type="submit" class="ctrl-btn remove">Remove</button>
+        </form>
+      </div>
+      <p class="row-total"><%= formatUSD(item.itemTotal) %></p>
+    </article>
+    <% }) %>
+
+    <div class="cart-summary">
+      <p>Total Monthly Cost</p>
+      <strong><%= formatUSD(cart.totalMonthly) %></strong>
+    </div>
+    <a href="/checkout" class="btn btn-primary">Proceed to Checkout</a>
+  </section>
+  <% } %>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

@@ -1,0 +1,80 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container section-space">
+  <section class="section-head listing-head">
+    <div>
+      <p class="eyebrow">Curated catalog</p>
+      <h1>AI Model Store</h1>
+      <p class="desc"><%= resultCount %> products available right now.</p>
+    </div>
+  </section>
+
+  <form class="filter-bar card" method="GET" action="/products">
+    <label>
+      Search
+      <input type="text" name="search" value="<%= filters.search %>" placeholder="Search model, provider, tags" />
+    </label>
+
+    <label>
+      Category
+      <select name="category">
+        <option value="all" <%= filters.category === 'all' ? 'selected' : '' %>>All</option>
+        <option value="local" <%= filters.category === 'local' ? 'selected' : '' %>>Local Models</option>
+        <option value="api" <%= filters.category === 'api' ? 'selected' : '' %>>Hosted APIs</option>
+        <option value="bundle" <%= filters.category === 'bundle' ? 'selected' : '' %>>Bundles</option>
+      </select>
+    </label>
+
+    <label>
+      Sort
+      <select name="sort">
+        <option value="featured" <%= filters.sort === 'featured' ? 'selected' : '' %>>Featured</option>
+        <option value="rating" <%= filters.sort === 'rating' ? 'selected' : '' %>>Top Rated</option>
+        <option value="price-asc" <%= filters.sort === 'price-asc' ? 'selected' : '' %>>Price: Low to High</option>
+        <option value="price-desc" <%= filters.sort === 'price-desc' ? 'selected' : '' %>>Price: High to Low</option>
+      </select>
+    </label>
+
+    <button class="btn btn-primary" type="submit">Apply</button>
+  </form>
+
+  <section class="product-grid">
+    <% if (products.length === 0) { %>
+    <p class="empty-state">No products found. Try different filters.</p>
+    <% } %>
+
+    <% products.forEach((product) => { %>
+    <article class="product-card">
+      <div class="logo-media">
+        <img src="<%= product.image %>" alt="<%= product.provider %> logo" class="logo-image" />
+      </div>
+      <div class="product-body">
+        <p class="meta"><%= product.provider %> | ⭐ <%= product.rating.toFixed(1) %></p>
+        <h3><a href="/products/<%= product.slug %>"><%= product.name %></a></h3>
+        <p class="desc"><%= product.description %></p>
+        <p class="meta">Context: <%= product.contextWindow || 'N/A' %> | <%= (product.modalities || []).slice(0, 2).join(', ') || 'Text' %></p>
+        <div class="tags">
+          <% product.tags.slice(0, 3).forEach((tag) => { %>
+          <span><%= tag %></span>
+          <% }) %>
+        </div>
+        <div class="product-bottom">
+          <p class="price"><%= formatUSD(product.priceMonthly) %><small>/mo</small></p>
+          <div class="line-actions">
+            <a href="/products/<%= product.slug %>" class="link-btn">Details</a>
+            <form method="POST" action="/cart/add/<%= product._id %>">
+              <input type="hidden" name="quantity" value="1" />
+              <input type="hidden" name="redirectTo" value="/products" />
+              <button type="submit" class="btn-mini">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </article>
+    <% }) %>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

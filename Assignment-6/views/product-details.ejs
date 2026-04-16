@@ -1,0 +1,89 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container section-space">
+  <article class="details card">
+    <div class="details-logo-wrap">
+      <img src="<%= product.image %>" alt="<%= product.provider %> logo" class="logo-image details-logo" />
+    </div>
+    <div class="details-body">
+      <p class="eyebrow"><%= product.provider %> | <%= product.category.toUpperCase() %></p>
+      <h1><%= product.name %></h1>
+      <p class="desc"><%= product.description %></p>
+
+      <div class="tags">
+        <% product.badges.forEach((badge) => { %>
+        <span><%= badge %></span>
+        <% }) %>
+      </div>
+
+      <ul class="highlights">
+        <% product.highlights.forEach((point) => { %>
+        <li><%= point %></li>
+        <% }) %>
+      </ul>
+
+      <section class="specs-grid" aria-label="Model specifications">
+        <div class="spec-item">
+          <span>Release</span>
+          <strong><%= product.releasePeriod %></strong>
+        </div>
+        <div class="spec-item">
+          <span>Context Window</span>
+          <strong><%= product.contextWindow %></strong>
+        </div>
+        <div class="spec-item">
+          <span>Modalities</span>
+          <strong><%= product.modalities.join(', ') %></strong>
+        </div>
+        <div class="spec-item">
+          <span>Best For</span>
+          <strong><%= product.bestFor.join(', ') %></strong>
+        </div>
+        <div class="spec-item">
+          <span>Latency Tier</span>
+          <strong><%= product.latencyTier %></strong>
+        </div>
+        <div class="spec-item">
+          <span>Deployment</span>
+          <strong><%= product.deploymentType %></strong>
+        </div>
+        <div class="spec-item full">
+          <span>Pricing Notes</span>
+          <strong><%= product.pricingNote %></strong>
+        </div>
+      </section>
+
+      <div class="details-bottom">
+        <p class="price"><%= formatUSD(product.priceMonthly) %><small>/mo</small></p>
+        <form method="POST" action="/cart/add/<%= product._id %>">
+          <input type="hidden" name="quantity" value="1" />
+          <input type="hidden" name="redirectTo" value="/products/<%= product.slug %>" />
+          <button class="btn btn-primary" type="submit">Add to cart</button>
+        </form>
+      </div>
+    </div>
+  </article>
+
+  <section class="section-space related-wrap">
+    <div class="section-head">
+      <h2>Related picks</h2>
+    </div>
+    <div class="product-grid">
+      <% relatedProducts.forEach((related) => { %>
+      <article class="product-card compact">
+        <div class="logo-media compact-logo">
+          <img src="<%= related.image %>" alt="<%= related.provider %> logo" class="logo-image" />
+        </div>
+        <div class="product-body">
+          <h3><a href="/products/<%= related.slug %>"><%= related.name %></a></h3>
+          <p class="price"><%= formatUSD(related.priceMonthly) %><small>/mo</small></p>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

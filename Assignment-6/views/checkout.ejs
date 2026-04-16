@@ -1,0 +1,60 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="container section-space checkout-layout">
+  <section class="card checkout-form-card">
+    <h1>Checkout Request</h1>
+    <p class="desc">Submit your team details and we will initiate onboarding.</p>
+
+    <% if (errors.length > 0) { %>
+    <div class="alert error">
+      <% errors.forEach((error) => { %>
+      <p><%= error %></p>
+      <% }) %>
+    </div>
+    <% } %>
+
+    <form method="POST" action="/checkout" class="checkout-form">
+      <label>
+        Full Name
+        <input type="text" name="customerName" value="<%= formData.customerName || '' %>" required />
+      </label>
+
+      <label>
+        Work Email
+        <input type="email" name="email" value="<%= formData.email || '' %>" required />
+      </label>
+
+      <label>
+        Company
+        <input type="text" name="company" value="<%= formData.company || '' %>" />
+      </label>
+
+      <label>
+        Notes
+        <textarea name="notes" rows="4" placeholder="Deployment goals, expected volume, timeline"><%= formData.notes || '' %></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-primary">Submit Request</button>
+    </form>
+  </section>
+
+  <aside class="card checkout-summary">
+    <h2>Order Summary</h2>
+    <ul>
+      <% cart.items.forEach((item) => { %>
+      <li>
+        <span><%= item.name %> x <%= item.quantity %></span>
+        <strong><%= formatUSD(item.itemTotal) %></strong>
+      </li>
+      <% }) %>
+    </ul>
+    <div class="summary-total">
+      <span>Total Monthly</span>
+      <strong><%= formatUSD(cart.totalMonthly) %></strong>
+    </div>
+  </aside>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

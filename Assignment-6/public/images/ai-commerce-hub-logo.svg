@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI Commerce Hub</title>
+  <desc id="desc">Logo used for bundle products in the storefront.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#C05621"/>
+      <stop offset="1" stop-color="#9F4316"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="360" fill="#FFF8F2"/>
+  <rect x="110" y="90" width="180" height="180" rx="30" fill="url(#g)"/>
+  <path d="M170 220l30-90h10l30 90h-14l-7-23h-30l-7 23zm24-35h22l-11-35z" fill="#fff"/>
+  <path d="M352 134h35c44 0 70 18 70 46s-26 46-70 46h-35zm20 16v60h15c32 0 49-10 49-30s-17-30-49-30z" fill="#1E1F24"/>
+  <path d="M485 134h22l30 44 30-44h22l-40 58 40 58h-22l-30-44-30 44h-22l40-58z" fill="#1E1F24"/>
+  <text x="620" y="183" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="54" font-weight="800" fill="#1E1F24">Commerce Hub</text>
+  <text x="620" y="222" font-family="Plus Jakarta Sans, Segoe UI, sans-serif" font-size="24" font-weight="600" fill="#63666F">AI Model Bundles</text>
+</svg>

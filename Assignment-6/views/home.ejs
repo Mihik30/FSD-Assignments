@@ -1,0 +1,87 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Production-ready AI marketplace</p>
+        <h1>Shop the latest AI models in a real ecommerce experience.</h1>
+        <p class="hero-copy">
+          Compare current-gen LLMs and agent stacks from OpenAI, Anthropic, Google,
+          xAI, Meta, and more. Add products to cart, review pricing, and submit your
+          deployment request in minutes.
+        </p>
+        <div class="hero-actions">
+          <a href="/products" class="btn btn-primary">Explore Catalog</a>
+          <a href="/cart" class="btn btn-secondary">View Cart</a>
+        </div>
+        <div class="mini-stat-grid">
+          <div class="mini-stat">
+            <strong><%= stats.totalProducts %></strong>
+            <span>Live Products</span>
+          </div>
+          <div class="mini-stat">
+            <strong><%= stats.totalProviders %></strong>
+            <span>Providers</span>
+          </div>
+          <div class="mini-stat">
+            <strong><%= stats.apiCount %></strong>
+            <span>Hosted APIs</span>
+          </div>
+        </div>
+      </div>
+      <aside class="hero-aside card">
+        <h3>How buying works</h3>
+        <ol>
+          <li>Browse latest models by provider and category.</li>
+          <li>Add models or bundles to cart and check monthly cost.</li>
+          <li>Submit checkout request for implementation onboarding.</li>
+        </ol>
+        <p class="desc">Catalog split: <strong><%= stats.localCount %></strong> local, <strong><%= stats.apiCount %></strong> API, <strong><%= stats.bundleCount %></strong> bundles.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container section-space">
+    <div class="section-head">
+      <h2>Featured models this month</h2>
+      <a href="/products">See all products</a>
+    </div>
+
+    <div class="product-grid">
+      <% if (featuredProducts.length === 0) { %>
+      <p class="empty-state">No featured products available right now.</p>
+      <% } %>
+
+      <% featuredProducts.forEach((product) => { %>
+      <article class="product-card">
+        <div class="logo-media">
+          <img src="<%= product.image %>" alt="<%= product.provider %> logo" class="logo-image" />
+        </div>
+        <div class="product-body">
+          <p class="meta"><%= product.provider %> | <%= product.category.toUpperCase() %></p>
+          <h3><a href="/products/<%= product.slug %>"><%= product.name %></a></h3>
+          <p class="desc"><%= product.description %></p>
+          <div class="tags">
+            <% product.badges.slice(0, 2).forEach((badge) => { %>
+            <span><%= badge %></span>
+            <% }) %>
+          </div>
+          <div class="product-bottom">
+            <p class="price"><%= formatUSD(product.priceMonthly) %><small>/mo</small></p>
+            <form method="POST" action="/cart/add/<%= product._id %>">
+              <input type="hidden" name="quantity" value="1" />
+              <input type="hidden" name="redirectTo" value="/" />
+              <button type="submit" class="btn-mini">Add to cart</button>
+            </form>
+          </div>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+<%- include('partials/end') %>

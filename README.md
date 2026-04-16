@@ -33,6 +33,11 @@ JavaScript, Node.js, Express, and MongoDB.
 - Focus: full-stack website using Express, EJS, and MongoDB
 - Features: featured travel packages, package listing with filters, package details page, and booking inquiry form stored in MongoDB
 
+### Assignment 6 - AI Ecommerce Store (Node.js + Express + MongoDB)
+- Entry file: `Assignment-6/server.js`
+- Focus: full-stack ecommerce website for latest AI models and bundles
+- Features: modern storefront UI, model catalog with search/filter/sort, product details, cart, checkout request flow, and order persistence in MongoDB
+
 ## Folder Structure
 
 ```text
@@ -64,6 +69,17 @@ Assignment-5/
   package.json
   server.js
   README.md
+Assignment-6/
+  config/
+  controllers/
+  models/
+  public/
+  routes/
+  seed/
+  views/
+  package.json
+  server.js
+  README.md
 README.md
 index.html
 ```
@@ -71,7 +87,7 @@ index.html
 ## How To Run
 
 1. For Assignments 1-4, open the assignment folder and open `index.html` in a browser.
-2. For Assignment 5, follow setup steps in `Assignment-5/README.md` and run the Express server.
+2. For Assignments 5 and 6, follow setup steps in each folder README and run the Express server.
 
 ## GitHub Pages
 
@@ -98,3 +114,4 @@ index.html
 - Assignment 3: complete
 - Assignment 4: complete
 - Assignment 5: complete
+- Assignment 6: complete
